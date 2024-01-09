@@ -55,27 +55,29 @@ test/cover:
 build: $(OBJECTS)
 
 dsim:
-	GOARCH=amd64 GOOS=linux go build -o=./cmd/dsim-launcher/dsim-launcher ./cmd/dsim-launcher/dsim-launcher.go ./cmd/dsim-launcher/ssh-utils.go
-	GOARCH=amd64 GOOS=linux go build -o=./cmd/dsim-node/dsim-node ./cmd/dsim-node/dsim-node.go
+	GOARCH=amd64 GOOS=linux go build -o=./cmd/dsim-launcher/dsim-launcher-amd64 ./cmd/dsim-launcher/dsim-launcher.go ./cmd/dsim-launcher/ssh-utils.go
+	GOARCH=amd64 GOOS=linux go build -o=./cmd/dsim-node/dsim-node-amd64 ./cmd/dsim-node/dsim-node.go
+	GOARCH=arm64 GOOS=linux go build -o=./cmd/dsim-launcher/dsim-launcher-arm64 ./cmd/dsim-launcher/dsim-launcher.go ./cmd/dsim-launcher/ssh-utils.go
+	GOARCH=arm64 GOOS=linux go build -o=./cmd/dsim-node/dsim-node-arm64 ./cmd/dsim-node/dsim-node.go
 
 run-3subredes:
-	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher \
+	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher-amd64 \
 		-nodeFile ./data/simulation-nodes.json \
-		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node \
+		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node-amd64 \
 		-period 2 \
 		./data/3subredes
 		
 run-6subredes:
-	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher \
+	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher-amd64 \
 		-nodeFile ./data/simulation-nodes.json \
-		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node \
+		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node-amd64 \
 		-period 200 \
 		./data/6subredes
 
 run-1subred:
-	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher \
+	rm -rf ~/dsim/logs/* && ./cmd/dsim-launcher/dsim-launcher-amd64 \
 		-nodeFile ./data/simulation-nodes.json \
-		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node \
+		-nodeCmd /home/mursisoy/Documents/courses/MscCS/redsisdis/CodigoSuministradoAAlumnos/distributed-petri-net-simulator/cmd/dsim-node/dsim-node-amd64 \
 		-period 10
 		./data/2ramasDe2.rdp
 
