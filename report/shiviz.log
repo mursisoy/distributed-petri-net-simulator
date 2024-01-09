@@ -1,0 +1,92 @@
+(?<date>(\d{2}:){2}\d{2}.\d{6}) (?<path>\S*): \[(?<priority>(INFO|DEBUG|WARNING|ERROR))\] - (?<event>.*)\n(?<host>\S*) (?<clock>{.*})
+
+15:49:34.564524 dsim-launcher.go:296: [DEBUG] - Send prepare simulation request to 127.0.0.1:18254
+dsl {"dsl":1}
+15:49:34.566407 dsim-launcher.go:296: [DEBUG] - Send prepare simulation request to 127.0.0.1:18255
+dsl {"dsl":2}
+15:49:34.567408 dsim-launcher.go:296: [DEBUG] - Send prepare simulation request to 127.0.0.1:18256
+dsl {"dsl":3}
+15:49:34.568339 dsim-launcher.go:275: [DEBUG] - Send start simulation request to 127.0.0.1:18254
+dsl {"dsl":4}
+15:49:34.568919 dsim-launcher.go:275: [DEBUG] - Send start simulation request to 127.0.0.1:18255
+dsl {"dsl":5}
+15:49:34.570061 dsim-launcher.go:275: [DEBUG] - Send start simulation request to 127.0.0.1:18256
+dsl {"dsl":6}
+15:49:32.835161 simulation_node.go:70: [DEBUG] - Starting simulation node
+sn4 {"sn4":1}
+15:49:33.331146 simulation_node.go:102: [DEBUG] - error decoding message: EOF
+sn4 {"sn4":2}
+15:49:34.565669 simulation_node.go:109: [DEBUG] - Prepare simulation request received
+sn4 {"dsl":1, "sn4":3}
+15:49:34.568663 simulation_node.go:123: [DEBUG] - Start simulation request received: {Request:{ClockPayload:{Pid:dsl Clock:{"dsl":4}}} End:2}
+sn4 {"dsl":4, "sn4":4}
+15:49:34.569210 simulation_node.go:177: [DEBUG] - Send event to sn6: Event -> Clock:%!d(dsim.Clock=1)	Dst: -4	Value: -1
+sn4 {"dsl":4, "sn4":5}
+15:49:34.570894 simulation_node.go:177: [DEBUG] - Send event to sn5: Event -> Clock:%!d(dsim.Clock=1)	Dst: -3	Value: -1
+sn4 {"dsl":4, "sn4":6}
+15:49:34.571970 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn6 Clock:{"dsl":6, "sn4":5, "sn6":6}}} NullMessage:{Lookahead:1}}
+sn4 {"dsl":6, "sn4":7, "sn6":6}
+15:49:34.572324 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn5 Clock:{"dsl":5, "sn5":5}}} NullMessage:{Lookahead:1}}
+sn4 {"dsl":6, "sn4":8, "sn5":5, "sn6":6}
+15:49:34.572791 simulation_node.go:205: [DEBUG] - Send null message to sn5: {Lookahead:2}
+sn4 {"dsl":6, "sn4":9, "sn5":5, "sn6":6}
+15:49:34.573275 simulation_node.go:136: [DEBUG] - External event received: {Request:{ClockPayload:{Pid:sn6 Clock:{"dsl":6, "sn4":5, "sn6":7}}} Event:Event -> Clock:%!d(dsim.Clock=2)	Dst: -2	Value: -1}
+sn4 {"dsl":6, "sn4":10, "sn5":5, "sn6":7}
+15:49:34.574700 simulation_node.go:205: [DEBUG] - Send null message to sn6: {Lookahead:2}
+sn4 {"dsl":6, "sn4":11, "sn5":5, "sn6":7}
+15:49:34.575353 simulation_node.go:136: [DEBUG] - External event received: {Request:{ClockPayload:{Pid:sn5 Clock:{"dsl":5, "sn4":6, "sn5":7}}} Event:Event -> Clock:%!d(dsim.Clock=2)	Dst: -2	Value: -1}
+sn4 {"dsl":6, "sn4":12, "sn5":7, "sn6":7}
+15:49:34.575619 simulation_node.go:159: [DEBUG] - Simulation engine finished
+sn4 {"dsl":6, "sn4":13, "sn5":7, "sn6":7}
+15:49:34.576363 simulation_node.go:205: [DEBUG] - Send null message to sn5: {Lookahead:3}
+sn4 {"dsl":6, "sn4":14, "sn5":7, "sn6":7}
+15:49:34.576463 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn5 Clock:{"dsl":6, "sn4":9, "sn5":10, "sn6":6}}} NullMessage:{Lookahead:3}}
+sn4 {"dsl":6, "sn4":15, "sn5":10, "sn6":7}
+15:49:34.577201 simulation_node.go:205: [DEBUG] - Send null message to sn6: {Lookahead:3}
+sn4 {"dsl":6, "sn4":16, "sn5":10, "sn6":7}
+15:49:34.577493 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn6 Clock:{"dsl":6, "sn4":11, "sn5":5, "sn6":10}}} NullMessage:{Lookahead:3}}
+sn4 {"dsl":6, "sn4":17, "sn5":10, "sn6":10}
+15:49:33.451468 simulation_node.go:70: [DEBUG] - Starting simulation node
+sn5 {"sn5":1}
+15:49:33.947541 simulation_node.go:102: [DEBUG] - error decoding message: EOF
+sn5 {"sn5":2}
+15:49:34.567021 simulation_node.go:109: [DEBUG] - Prepare simulation request received
+sn5 {"dsl":2, "sn5":3}
+15:49:34.569282 simulation_node.go:123: [DEBUG] - Start simulation request received: {Request:{ClockPayload:{Pid:dsl Clock:{"dsl":5}}} End:2}
+sn5 {"dsl":5, "sn5":4}
+15:49:34.569496 simulation_node.go:205: [DEBUG] - Send null message to sn4: {Lookahead:1}
+sn5 {"dsl":5, "sn5":5}
+15:49:34.571521 simulation_node.go:136: [DEBUG] - External event received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":4, "sn4":6}}} Event:Event -> Clock:%!d(dsim.Clock=1)	Dst: -3	Value: -1}
+sn5 {"dsl":5, "sn4":6, "sn5":6}
+15:49:34.573583 simulation_node.go:177: [DEBUG] - Send event to sn4: Event -> Clock:%!d(dsim.Clock=2)	Dst: -2	Value: -1
+sn5 {"dsl":5, "sn4":6, "sn5":7}
+15:49:34.574325 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":6, "sn4":9, "sn5":5, "sn6":6}}} NullMessage:{Lookahead:2}}
+sn5 {"dsl":6, "sn4":9, "sn5":8, "sn6":6}
+15:49:34.574518 simulation_node.go:159: [DEBUG] - Simulation engine finished
+sn5 {"dsl":6, "sn4":9, "sn5":9, "sn6":6}
+15:49:34.575686 simulation_node.go:205: [DEBUG] - Send null message to sn4: {Lookahead:3}
+sn5 {"dsl":6, "sn4":9, "sn5":10, "sn6":6}
+15:49:34.577033 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":6, "sn4":14, "sn5":7, "sn6":7}}} NullMessage:{Lookahead:3}}
+sn5 {"dsl":6, "sn4":14, "sn5":11, "sn6":7}
+15:49:34.072446 simulation_node.go:70: [DEBUG] - Starting simulation node
+sn6 {"sn6":1}
+15:49:34.564588 simulation_node.go:102: [DEBUG] - error decoding message: EOF
+sn6 {"sn6":2}
+15:49:34.567985 simulation_node.go:109: [DEBUG] - Prepare simulation request received
+sn6 {"dsl":3, "sn6":3}
+15:49:34.570534 simulation_node.go:136: [DEBUG] - External event received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":4, "sn4":5}}} Event:Event -> Clock:%!d(dsim.Clock=1)	Dst: -4	Value: -1}
+sn6 {"dsl":4, "sn4":5, "sn6":4}
+15:49:34.570797 simulation_node.go:123: [DEBUG] - Start simulation request received: {Request:{ClockPayload:{Pid:dsl Clock:{"dsl":6}}} End:2}
+sn6 {"dsl":6, "sn4":5, "sn6":5}
+15:49:34.571057 simulation_node.go:205: [DEBUG] - Send null message to sn4: {Lookahead:1}
+sn6 {"dsl":6, "sn4":5, "sn6":6}
+15:49:34.572419 simulation_node.go:177: [DEBUG] - Send event to sn4: Event -> Clock:%!d(dsim.Clock=2)	Dst: -2	Value: -1
+sn6 {"dsl":6, "sn4":5, "sn6":7}
+15:49:34.575120 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":6, "sn4":11, "sn5":5, "sn6":7}}} NullMessage:{Lookahead:2}}
+sn6 {"dsl":6, "sn4":11, "sn5":5, "sn6":8}
+15:49:34.575570 simulation_node.go:205: [DEBUG] - Send null message to sn4: {Lookahead:3}
+sn6 {"dsl":6, "sn4":11, "sn5":5, "sn6":10}
+15:49:34.575445 simulation_node.go:159: [DEBUG] - Simulation engine finished
+sn6 {"dsl":6, "sn4":11, "sn5":5, "sn6":9}
+15:49:34.577768 simulation_node.go:142: [DEBUG] - External null message received: {Request:{ClockPayload:{Pid:sn4 Clock:{"dsl":6, "sn4":16, "sn5":10, "sn6":7}}} NullMessage:{Lookahead:3}}
+sn6 {"dsl":6, "sn4":16, "sn5":10, "sn6":11}
