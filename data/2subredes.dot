@@ -1,0 +1,52 @@
+digraph G{
+    // newrank=true;
+ rankdir=LR;
+  {
+    node [shape=circle];
+    "p0.0" [label="&bull;"];
+    "p0.0"; "p0.1"; "p0.2";
+    "p1.0";"p1.1";
+    "p1global";"p2global"
+  }
+  
+  {
+    node [shape=rect,height=0.4,width=.4];
+    "t0.0";"t0.1";
+    "t1.0"
+  }
+  
+    subgraph cluster_subred0 {
+		style="rounded,dashed";
+        color=lightgrey;
+		 "t0.0";"t0.1";
+		 "p0.0"; "p0.1"; "p0.2";
+		label = "subred0";
+	}
+	
+	subgraph cluster_subred1 {
+		style="rounded,dashed";
+        color=lightgrey;
+	"p1.0";"p1.1";
+	"t1.0"
+		label = "subred1";
+	}
+	
+//   { rank=same; "cluster_subred1"; "cluster_subred0"; }
+//   { rank=same; "p1.1"; "p0.2"; }
+    // edge [constraint=false] 
+    
+    p1global->"p1.0";
+    "p0.0" -> "t0.0";
+	"t0.0" -> "p0.1";
+	"p0.2" -> "t0.1";
+	"t0.1" -> "p0.0";
+	"p1.0"->"t1.0"
+	"t1.0"->"p1.1"
+    "p1.1"->p2global;
+    p2global->"p0.2"
+    "p0.1"->p1global;
+    
+    
+    
+  
+}
